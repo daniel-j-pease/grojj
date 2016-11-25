@@ -122,7 +122,7 @@ class App extends Component {
       <div>
         <header>
           <h1>Grojj.</h1>
-          <button onClick={this.showLogin}>Login or Sign Up</button>
+          <button onClick={this.showLogin}>Log In or Sign Up</button>
           <Logout
             logout={this.logout.bind(this)}
           />
