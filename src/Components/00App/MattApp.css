@@ -73,12 +73,14 @@ nav {
   font-size: 1.5em;
   width: 100%;
   display: block;
+  font-family: 'Raleway', cursive;
 }
 
 nav > div {
   color: #fafafa;
   margin: 0 5vw;
   position: relative;
+  font-family: 'Raleway', cursive;
   left: 12vw;
   text-align: center;
   display: inline-block;
