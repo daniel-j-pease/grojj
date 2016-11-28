@@ -5,7 +5,6 @@
   color: red;
 }
 
-
 #loginSignup {
   position: relative;
   top: 3vh;
@@ -17,7 +16,8 @@
   background: -o-linear-gradient(#fff, #999);
   display: none;
 }
-.close-btn{
+
+.close-btn {
   height: 3vh;
   position: relative;
   top: 0vh;
@@ -28,13 +28,14 @@
   border: none;
 }
 
-.close-btn:hover{
+.close-btn:hover {
   background: #fafafa;
   color:  #394149;
   box-shadow: 0 0 3px gray;
   transition: background .5s ease;
   cursor: pointer;
 }
+
 #login {
   width: 29.45vw;
   height: 70vh;
@@ -63,13 +64,13 @@
   /*color: #323232;*/
 }
 
-#loginSignupCancel{
+#loginSignupCancel {
   position: absolute;
   margin-top: 40vh;
   margin-left: 9vw;
 }
 
-.modalButton{
+.modalButton {
   border: none;
   width: 15vw;
   font-size: .5em;
@@ -79,7 +80,7 @@
   border-radius: 8px;
 }
 
-.modalButton:hover{
+.modalButton:hover {
   color: #394149;
   background: #fafafa;
   box-shadow: 0 0 3px gray;

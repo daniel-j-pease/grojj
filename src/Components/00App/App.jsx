@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+<<<<<<< HEAD
 import saveMap from './Maps.jsx';
+=======
+import SaveMap from './Maps.jsx';
+
+>>>>>>> 4c0a18d0f0017bbcd357d1ef25a2874c060cc85b
 import LoginSignup from '../01LoginSignup/LoginSignup.jsx';
 import Logout from '../01Logout/Logout.jsx';
 import CreateStore from '../02CreateStore/CreateStore.jsx';
@@ -18,6 +23,10 @@ class App extends Component {
     super();
 
     this.state = {
+      // markers: {
+      //   lat: 40.7575285,
+      //   lng: -73.9884469
+      // },
       searchZip: '',
       loggedIn: false,
       currentUser: '',
@@ -92,6 +101,11 @@ class App extends Component {
     let logoutButton = document.querySelector('#logoutButton');
     logoutButton.style.display = 'block';
 
+  }
+
+  showAsideSMyStore() {
+    let asideMyStore = document.querySelector('.leftAside');
+    asideMyStore.style.display = 'block';
   }
 
   hideEditForm() {
@@ -259,10 +273,12 @@ class App extends Component {
       this.hideLoginSignup();
       this.hideLoginButton();
       this.showLogoutButton();
+      this.showAsideSMyStore();
       console.log(this.state)
     })
     .catch(error => this.loginError(error))
   }
+
 
   logout() {
     this.setState({
@@ -459,33 +475,16 @@ class App extends Component {
     })
   };
 
-   // componentWillMount() {
-   //   const body = document.getElementsByTagName('body')[0];
-   //   const script = document.createElement("script");
-
-   //    script.type = 'text/javascript';
-   //    script.className = 'container';
-
-   //    script.src = "http://maps.google.com/maps/api/js?key=AIzaSyDu1zOGCMJEMn2Ja45WRuyWFN_Rv7ZSh3c";
-   //    script.async= true;
-   //    script.defer= true;
-
-   //    body.appendChild(script);
-   //    // script.onload = () => {
-   //    //     console.log(document.querySelector('.container'));
-   //    //     ReactDOM.render( <script />,
-   //    //       document.querySelector('.container')
-   //    //     );
-   //    // };
-
-   //  // console.log(script)
-   //  }
   loginError() {
     let loginError = document.querySelector('#loginError')
     loginError.style.display = 'block';
   }
 
   render(){
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4c0a18d0f0017bbcd357d1ef25a2874c060cc85b
     const location = {
       lat: 40.7575285,
       lng: -73.9884469
@@ -498,6 +497,7 @@ class App extends Component {
         }
       }
     ]
+<<<<<<< HEAD
     return (
       <div>
         <div style={{width:300, height:600, background: 'pink'}}>
@@ -505,6 +505,13 @@ class App extends Component {
             logout={this.logout.bind(this)}
           />
         </div>
+=======
+
+    return (
+      <div>
+
+
+>>>>>>> 4c0a18d0f0017bbcd357d1ef25a2874c060cc85b
         <header>
           <h1>Grojj.</h1>
           <button id="loginButton" onClick={this.showLoginSignup}>Login or Sign Up</button>
@@ -535,6 +542,19 @@ class App extends Component {
           </nav>
         </header>
         <main>
+<<<<<<< HEAD
+=======
+
+          <div style={{width:400, height:400, background: 'red'}}>
+
+            <SaveMap
+              center={location}
+              markers={markers}
+            />
+
+          </div>
+
+>>>>>>> 4c0a18d0f0017bbcd357d1ef25a2874c060cc85b
           <CreateStore
             postNewStorefront={this.postNewStorefront.bind(this)}
             trackCreateStore={this.trackCreateStore.bind(this)}
@@ -548,6 +568,7 @@ class App extends Component {
           <AsideSMyStore
             currentStorefront={this.state.currentStorefront}
             currentUser={this.state.currentUser}
+            editStorefront={this.state.editStorefront}
             removeOneStorefront={this.removeOneStorefront.bind(this)}
           />
           <MyItemList

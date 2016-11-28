@@ -8,7 +8,7 @@ BEGIN;
 CREATE TABLE grojjItems(
   item_id SERIAL PRIMARY KEY,
   name VARCHAR NOT NULL,
-  image_url VARCHAR NOT NULL,
+  image_url VARCHAR,
   condition VARCHAR NOT NULL,
   price VARCHAR NOT NULL,
   description VARCHAR,
