@@ -291,7 +291,8 @@ export default class App extends Component {
   }
 
   trackCreateStore(e) {
-    let fieldsArr = e.target.parentElement.parentElement.childNodes;
+    let fieldsArr = e.target.parentElement.childNodes;
+    console.log(fieldsArr[2].value)
     this.setState({
       createStorefront: {
         name: fieldsArr[1].value,

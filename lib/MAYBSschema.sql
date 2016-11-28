@@ -20,8 +20,8 @@ CREATE TABLE grojjItems(
 CREATE TABLE grojjUsers(
   user_id SERIAL PRIMARY KEY,
   userimage_url VARCHAR NOT NULL,
-  username VARCHAR NOT NULL,
-  password VARCHAR NOT NULL
+  username VARCHAR NOT NULL UNIQUE,
+  password VARCHAR NOT NULL UNIQUE
 );
 
 CREATE TABLE grojjStorefronts(
