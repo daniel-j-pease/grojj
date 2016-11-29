@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import SaveMap from './Maps.jsx';
 import LoginSignup from '../01LoginSignup/LoginSignup.jsx';
 import Logout from '../01Logout/Logout.jsx';
 import CreateStore from '../02CreateStore/CreateStore.jsx';
@@ -78,6 +79,7 @@ class App extends Component {
       storefrontItems: []
     };
   }
+
 
   showLoginSignup() {
     let loginSignup = document.querySelector('#loginSignup');
@@ -535,6 +537,20 @@ class App extends Component {
   }
 
   render(){
+
+    const location = {
+      lat: 40.7575285,
+      lng: -73.9884469
+    }
+//Below is where you create your pins/markers
+    const markers = [
+      {
+        location:{
+          lat: 40.7575285,
+          lng: -73.9884469
+        }
+      }
+    ]
     return (
 
       <div>
@@ -570,39 +586,6 @@ class App extends Component {
         </header>
 
         <main>
-<<<<<<< HEAD
-          <CreateStore
-            postNewStorefront={this.postNewStorefront.bind(this)}
-            trackCreateStore={this.trackCreateStore.bind(this)}
-          />
-          <EditStore
-            currentStorefront={this.state.currentStorefront}
-            putEditStorefront={this.putEditStorefront.bind(this)}
-            trackEditStore={this.trackEditStore.bind(this)}
-            hideEditForm={this.hideEditForm.bind(this)}
-          />
-          <AsideSMyStore
-            currentStorefront={this.state.currentStorefront}
-            currentUser={this.state.currentUser}
-            editStorefront={this.state.editStorefront}
-            removeOneStorefront={this.removeOneStorefront.bind(this)}
-          />
-          <MyItemList
-            storefrontItems={this.state.storefrontItems}
-          />
-          <AddNewItem
-            postNewItem={this.postNewItem.bind(this)}
-            trackCreateItem={this.trackCreateItem.bind(this)}
-          />
-          <div className="mapContainer" style={{width:750, height:450, background: 'pink'}}></div>
-          <div style={{width:400, height:400, background: 'red'}}></div>
-        </main>
-        <footer>
-          <a href="#" className='center-a'>About Us</a>
-          <a href="#" className='center-a'>Contact</a>
-          <p>Grojj 2016</p>
-        </footer>
-=======
 
 
           <div className="mapContainer" style={{width:750, height:450, background: 'pink'}}>
@@ -659,7 +642,6 @@ class App extends Component {
 
       </div>
 
->>>>>>> 4235f50f11d0a6937fd682e46d945a718c17dce0
     )
   }
 }
