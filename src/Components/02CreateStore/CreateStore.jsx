@@ -11,16 +11,16 @@ class CreateStore extends Component {
   render(){
     return(
       <div id="createStoreDiv">
-        <h3 id="createStoreHeading">Let's set up a garage sale! </h3>
+        <h4 id="createStoreHeading">Let's set up a garage sale! </h4>
           <input onChange={this.props.trackCreateStore} className="name" type="text" placeholder="Name of garage sale" required></input>
           <input onChange={this.props.trackCreateStore} className="address" type="text" placeholder="Street address" required></input>
         <div className="smallLocations">
           <select onChange={this.props.trackCreateStore} name="borough" className="borough">
             <option value="" disabled>Select Borough</option>
             <option value="Brooklyn">Brooklyn</option>
-            <option value="Queens">Queens</option>
             <option value="Bronx">Bronx</option>
             <option value="Manhattan">Manhattan</option>
+            <option value="Queens">Queens</option>
             <option value="Staten Island">Staten Island</option>
           </select>
           <input onChange={this.props.trackCreateStore} className="zip" type="text" placeholder="ZIP" required></input>

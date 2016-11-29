@@ -11,7 +11,7 @@ export default class LoginSignup extends Component {
           <h1>Login:</h1>
             <input onChange={this.props.trackLoginForm} type="text" placeholder="username" />
             <br></br>
-            <input onChange={this.props.trackLoginForm} type="text" placeholder="password" />
+            <input onChange={this.props.trackLoginForm} type="password" placeholder="password" />
             <br></br>
             <button onClick={this.props.postLogin} className="modalButton">Login</button>
         </div>
@@ -20,7 +20,7 @@ export default class LoginSignup extends Component {
           <h1>Signup:</h1>
             <input onChange={this.props.trackSignupForm} type="text" placeholder="username" />
             <br></br>
-            <input onChange={this.props.trackSignupForm} type="text" placeholder="password" />
+            <input onChange={this.props.trackSignupForm} type="password" placeholder="password" />
             <br></br>
             <button onClick={this.props.postSignup} className="modalButton">Sign Up</button>
             <br></br>

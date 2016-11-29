@@ -91,6 +91,24 @@ nav > div {
   color: #0A1612;
 }
 
+#loginButton {
+  position: absolute;
+  font-size: 1em;
+  border: 1px solid #fafafa;
+  color: #0A1612;
+  background-color: #0A1612;
+  top: 8vh;
+  right: 1vw;
+  width: 15vw;
+  display: block;
+}
+
+#loginButton:hover{
+  background-color: #fafafa;
+  color: #0A1612;
+  transition: background-color 0.25s;
+}
+
 
 footer {
   background-color: #F7CE3E;

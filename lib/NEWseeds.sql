@@ -13,23 +13,21 @@ INSERT INTO grojjItems(item_id, name, image_url, condition, price, description, 
 (9, 'Glass coffee table', 'http://freepngimages.com/wp-content/uploads/2015/10/Chrome-Coffee-Table-transparent-background.png', 'Barely Used', '$', '', '0', '', ''),
 (10, 'Game of Thrones Board Game', 'http://www.fantasyflightgames.com/ffg_content/agot-bg-2nd-ed/board.png', 'Used', '$$', '', '0', '', '');
 
-INSERT INTO grojjaddresses(address_id, street, city, state, zip, latitude, longitude, sellerUname, sellerid) VALUES
+INSERT INTO grojjaddresses(address_id, street, city, state, zip, latitude, longitude) VALUES
 
-(1, '180 Rivington St', 'New York', 'NY', '10002', '40.718789°', '-73.984037°', 'Dolores45', 2),
-(2, '420 Hudson St', 'New York', 'NY', '10014', '40.730321°', '-74.006565°', 'IrwinForPresident2020', 3),
-(3, '124 E 19th St', 'New York', 'NY', '10003', '40.737042°', '-73.98653°', 'JoeyPNYC', 4),
-(4, '216-218 11th Ave', 'New York', 'NY', '10001', '40.750108°', '-74.00614°', 'Rach8', 5),
-(5, '148 E 79th St', 'New York', 'NY', '10075', '40.774811°', '-73.958785°', 'flexboxmaster', 6),
-(6, '233 W 109th St', 'New York', 'NY', '10025', '40.803194°', '-73.965657°', 'TreeHugger01', 7),
-(7, '346 W 118th St', 'New York', 'NY', '10026', '40.806317°', '-73.956094°', 'LoveLife17', 8),
-(8, '85 Livingston St', 'Brooklyn', 'NY', '11201', '40.691588°', '-73.990549°', 'Sabz', 9),
-(9, '8666 23rd Ave', 'Brooklyn', 'NY', '11214', '40.59941°', '-73.993082°', 'Kate08', 10),
-(10, '243 W 54th St', 'New York', 'NY', '10019', '40.764522°', '-73.983276°', 'MeetDrew', 1);
+(1, '180 Rivington St', 'New York', 'NY', '10002', '40.718789°', '-73.984037°'),
+(2, '420 Hudson St', 'New York', 'NY', '10014', '40.730321°', '-74.006565°'),
+(3, '124 E 19th St', 'New York', 'NY', '10003', '40.737042°', '-73.98653°'),
+(4, '216-218 11th Ave', 'New York', 'NY', '10001', '40.750108°', '-74.00614°'),
+(5, '148 E 79th St', 'New York', 'NY', '10075', '40.774811°', '-73.958785°'),
+(6, '233 W 109th St', 'New York', 'NY', '10025', '40.803194°', '-73.965657°'),
+(7, '346 W 118th St', 'New York', 'NY', '10026', '40.806317°', '-73.956094°'),
+(8, '85 Livingston St', 'Brooklyn', 'NY', '11201', '40.691588°', '-73.990549°'),
+(9, '8666 23rd Ave', 'Brooklyn', 'NY', '11214', '40.59941°', '-73.993082°'),
+(10, '243 W 54th St', 'New York', 'NY', '10019', '40.764522°', '-73.983276°');
 
 INSERT INTO grojjusers(user_id, userimage_url, username, password) VALUES
 (1, 'https://img.buzzfeed.com/buzzfeed-static/static/2016-11/18/17/asset/buzzfeed-prod-fastlane01/sub-buzz-21330-1479506533-8.jpg?resize=625:781', 'annaK234', 'annakendrick');
 
-INSERT INTO grojjStorefronts (storefront_id, name, address, borough, zip, directions, sale_date, startTime, endTime, unitedState, currentUser) VALUES
-(1, 'irwin', '123 ga street', 'Brooklyn', '11104', 'left at the tree', '2016-11-30', '03:00 PM', '20:00', '', '');
 
 COMMIT;
