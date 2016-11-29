@@ -12,6 +12,8 @@ class CreateStore extends Component {
     return(
       <div id="createStoreDiv">
         <h3 id="createStoreHeading">Let's set up a garage sale! </h3>
+
+        <div id="filled">
           <input onChange={this.props.trackCreateStore} className="name" type="text" placeholder="Name of garage sale" required></input>
           <input onChange={this.props.trackCreateStore} className="address" type="text" placeholder="Street address" required></input>
         <div className="smallLocations">
@@ -34,6 +36,7 @@ class CreateStore extends Component {
         <div className="createOrCancel">
           <button onClick={this.props.postNewStorefront} id="createStoreButton">Create Garage Sale</button>
           <button onClick={this.hideStoreButton} id="cancelStoreButton">Cancel</button>
+        </div>
         </div>
     </div>
     )

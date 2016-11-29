@@ -4,8 +4,12 @@
 .leftAside{
   /*float: left;*/
   position: absolute;
+  top: 152px;
+  margin-left: 50px;
   border: 1px solid #000;
-  max-width: 30%;
+  left: 20px;
+  width: 200px;
+  padding:15px;
   max-height: 90%;
   height: 51vh;
   margin: 4vh;
@@ -17,12 +21,12 @@
 }
 
 .leftAside > div{
-  margin-left: .5vh;
+  margin-left: .8vh;
   font-style: italic;
 }
 
 .asideSub{
-  margin-left: .5vh;
+  margin-left: .8vh;
   margin-right: 4vh;
   color: #222;
 }
@@ -38,7 +42,7 @@
 
 #sellerMyStore{
   color: #222;
-  margin-left: .5vh;
+  margin-left: .8vh;
 
 }
 
@@ -50,7 +54,8 @@
 }
 
 #editButton, #deleteButton{
-  margin-left: 12px;
+  margin-top: 40px;
+  margin-left: 10px;
   letter-spacing: 2px;
   cursor: pointer;
   border-radius: 6px;
@@ -63,10 +68,12 @@
 #deleteButton {
   background: #d9534f;
   color: #fafafa;
+  margin-left: 18px;
 }
 
 #editButton:hover, #deleteButton:hover{
   box-shadow: 0 0 3px gray;
+  transform: scale(1.2);
 }
 
 #addItemButton{

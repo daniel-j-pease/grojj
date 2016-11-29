@@ -8,6 +8,7 @@
 
 #loginSignup {
   position: relative;
+  z-index: +1;
   top: 3vh;
   left: 20vw;
   height: 70vh;

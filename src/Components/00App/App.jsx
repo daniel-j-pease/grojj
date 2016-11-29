@@ -524,7 +524,7 @@ class App extends Component {
         </header>
         <main>
 
-          <div style={{width:400, height:400, background: 'red'}}>
+          <div className="mapContainer" style={{width:750, height:450, background: 'pink'}}>
 
             <SaveMap
               center={location}
@@ -557,8 +557,10 @@ class App extends Component {
           />
         </main>
 
-        <footer>
-          <div></div>
+         <footer>
+            <a href="#" className='center-a'>About Us</a>
+            <a href="#" className='center-a'>Contact</a>
+            <p>Grojj 2016</p>
         </footer>
       </div>
     )
