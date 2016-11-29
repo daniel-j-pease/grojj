@@ -19,6 +19,7 @@ export default class MyItemList extends Component{
           price={item.price}
           description={item.description}
           likes={item.likes}
+          showEditItemDiv={this.props.showEditItemDiv}
         />
       </div>
     )

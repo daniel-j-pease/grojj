@@ -126,7 +126,7 @@ footer {
     letter-spacing: 1px;
     font-family: 'Pacifico', cursive;
     height: 6vh;
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
     left: 0;

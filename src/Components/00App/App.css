@@ -111,9 +111,8 @@ nav > div {
   transition: background-color 0.25s;
 }
 
-
 footer {
   background-color: #F7CE3E;
-
+  position: fixed;
+  bottom: 0;
 }
-

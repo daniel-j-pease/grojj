@@ -80,7 +80,6 @@ class App extends Component {
     };
   }
 
-
   showLoginSignup() {
     let loginSignup = document.querySelector('#loginSignup');
     loginSignup.style.display = 'block';
@@ -99,6 +98,11 @@ class App extends Component {
   showLogoutButton() {
     let logoutButton = document.querySelector('#logoutButton');
     logoutButton.style.display = 'block';
+  }
+
+  hideLogoutButton() {
+    let logoutButton = document.querySelector('#logoutButton');
+    logoutButton.style.display = 'none';
   }
 
   showAsideSMyStore() {
@@ -136,12 +140,19 @@ class App extends Component {
     searchInput.style.display = 'block';
   }
 
+  showEditItemDiv() {
+    console.log('showing edit div')
+    let editItemDiv = document.querySelector('#editItemDiv');
+    editItemDiv.style.display = 'block';
+  }
+
   relaunchLogin() {
     let loginError = document.querySelector('#loginError');
     loginError.style.display = 'none';
   }
 
   getOneStorefront() {
+    console.log('getting one storefront')
     return fetch('/api/myStorefront', {
       method: 'POST',
       headers: {
@@ -287,6 +298,7 @@ class App extends Component {
       this.hideLoginButton();
       this.showLogoutButton();
       this.showAsideSMyStore();
+      this.getOneStorefront();
       this.hideMap();
       console.log(this.state)
     })
@@ -294,8 +306,6 @@ class App extends Component {
   }
 
   logout() {
-    this.showLoginButton()
-    .then(() => {
     this.setState({
       loggedIn: false,
       currentToken: '',
@@ -311,7 +321,9 @@ class App extends Component {
         zip: ''
       },
       storefrontItems: []
-    })
+    }, () => {
+      this.showLoginButton();
+      this.hideLogoutButton();
     })
   }
 
@@ -341,15 +353,17 @@ class App extends Component {
 
   trackCreateItem(e) {
     let fieldsArr = e.target.parentElement.childNodes;
-    console.log(fieldsArr)
+    console.log(fieldsArr[0].value)
     this.setState({
       createItem: {
-        name: fieldsArr[1].value,
-        image_url: fieldsArr[2].value,
-        condition: fieldsArr[3].children[0].value,
-        price: fieldsArr[3].children[1].value,
-        description: fieldsArr[4].value
+        name: fieldsArr[0].value,
+        image_url: fieldsArr[1].value,
+        condition: fieldsArr[2].childNodes[0].value,
+        price: fieldsArr[2].childNodes[1].value,
+        description: fieldsArr[3].value
       },
+    }, () => {
+      console.log(this.state)
     })
   }
 
@@ -371,15 +385,17 @@ class App extends Component {
 
   trackEditItem(e) {
     let fieldsArr = e.target.parentElement.childNodes;
-    console.log(fieldsArr)
+    console.log(fieldsArr[0].value)
     this.setState({
       editItem: {
-        name: fieldsArr[1].value,
-        image_url: fieldsArr[2].value,
-        condition: fieldsArr[3].children[0].value,
-        price: fieldsArr[3].children[1].value,
-        description: fieldsArr[4].value
-      }
+        name: fieldsArr[0].value,
+        image_url: fieldsArr[1].value,
+        condition: fieldsArr[2].childNodes[0].value,
+        price: fieldsArr[2].childNodes[1].value,
+        description: fieldsArr[3].value
+      },
+    }, () => {
+      console.log(this.state)
     })
 }
 
@@ -438,7 +454,8 @@ class App extends Component {
           sale_date: this.state.createStorefront.sale_date,
           startTime: this.state.createStorefront.startTime,
           endTime: this.state.createStorefront.endTime,
-        }
+        },
+        hasStorefront: true
       })
     })
     .then(()=> {
@@ -484,11 +501,15 @@ class App extends Component {
         condition: this.state.editItem.condition,
         price: this.state.editItem.price,
         description: this.state.editItem.description,
-        likes: 0,
+        likes: '0',
         currentUser: this.state.currentUser,
         currentStorefront: this.state.currentStorefront.name
       })
     })
+    .then((data) => {
+      console.log(data)
+    })
+    .catch(error => console.log(error))
   }
 
   putEditStorefront() {
@@ -615,6 +636,7 @@ class App extends Component {
             />
             <MyItemList
               storefrontItems={this.state.storefrontItems}
+              showEditItemDiv={this.showEditItemDiv}
             />
             <EditItem
               currentStorefront={this.state.currentStorefront}

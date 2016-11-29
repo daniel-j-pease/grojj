@@ -6,31 +6,31 @@ class EditItem extends Component {
   render(){
     return(
       <div id="editItemDiv">
-        <h3 id="editItemHeading">Edit your item</h3>
-          <input onChange={this.props.trackEditItem} className="name" type="text" value={this.props.currentStorefront.name} required></input>
-          <input onChange={this.props.trackEditItem} className="address" type="text" value={this.props.currentStorefront.address} required></input>
-        <div className="smallLocations">
-          <select onChange={this.props.trackEditItem} name="borough" className="borough" value={this.props.currentStorefront.borough}>
-            <option value="" disabled>Select Borough</option>
-            <option value="Brooklyn">Brooklyn</option>
-            <option value="Queens">Queens</option>
-            <option value="Bronx">Bronx</option>
-            <option value="Manhattan">Manhattan</option>
-            <option value="Staten Island">Staten Island</option>
-          </select>
-          <input onChange={this.props.trackEditItem} className="zip" type="text" value={this.props.currentStorefront.zip} required></input>
+        <h2 id="editItemHeading">Let's add an item!</h2>
+          <div className="fillOut">
+            <input onChange={this.props.trackEditItem} className="name" type="text" placeholder="Name of item" required></input>
+            <input onChange={this.props.trackEditItem} className="itemU" type="text" placeholder="Link to image of your item" required></input>
+          <div className="smallLocations">
+            <select onChange={this.props.trackEditItem} name="condi" className="condi">
+              <option value="" defaultValue disabled>Select Condition</option>
+              <option value="Used">Used</option>
+              <option value="BarelyUsed">Barely Used</option>
+              <option value="New">New</option>
+            </select>
+            <select onChange={this.props.trackEditItem} name="price" id="price">
+              <option value="" defaultValue disabled>Select Price Bracket</option>
+              <option value="One">$</option>
+              <option value="Two">$$</option>
+              <option value="Three">$$$</option>
+            </select>
+          </div>
+          <input onChange={this.props.trackEditItem} id="desc" type="text" placeholder="Brief description of your item" required></input>
+          <div className="createOrCancel">
+            <button onClick={this.props.putEditItem} id="editItemButton">Edit Item</button>
+            <button onClick={this.props.hideEditItem} id="cancelItemButton">Cancel</button>
+          </div>
         </div>
-          <input onChange={this.props.trackEditItem} id="directions" type="text" value={this.props.currentStorefront.directions}></input>
-          <input onChange={this.props.trackEditItem} id="date" type="date" min="2016-11-25"></input>
-        <div id="startEnd">
-          <input onChange={this.props.trackEditItem} id="startTime" type="time"></input>
-          <input onChange={this.props.trackEditItem} id="endTime" type="time"></input>
-        </div>
-        <div className="editOrCancel">
-          <button onClick={this.props.putEditItem} id="editStoreButton">Edit Item</button>
-          <button onClick={this.props.hideEditItem} id="editStoreButton">Cancel</button>
-        </div>
-    </div>
+      </div>
     )
   }
 }

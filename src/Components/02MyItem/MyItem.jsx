@@ -1,20 +1,6 @@
 import React, { Component } from 'react'
 import './MyItem.css'
 
-
-//props needed:
-// name
-// url
-// price
-// condition
-// description
-// likes
-// id
-
-//functions needed:
-// for the edit button
-// for the delete button
-
 export default class MyItem extends Component {
 
   render() {
@@ -38,11 +24,9 @@ export default class MyItem extends Component {
         <p className="myStoreMyItems" className="myItemLikes">
           {this.props.likes}
         </p>
-        <button onClick={this.props.putEditItem} id="editItemButton">Edit Item</button>
+        <button onClick={this.props.showEditItemDiv} id="editItemButton">Edit Item</button>
         <button>Delete</button>
       </div>
     );
   }
 }
-
-// export default MyItem;

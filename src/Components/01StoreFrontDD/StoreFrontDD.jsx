@@ -11,7 +11,7 @@ export default class StorefrontDD extends Component {
   showMyStoreDiv() {
     let myStoreDiv = document.querySelector('#asideSellerMyStore')
     myStoreDiv.style.display = 'block';
-    let rightDiv = document.querySelector('#rightDiv')
+    let rightDiv = document.querySelector('.rightDiv')
     rightDiv.style.display = 'block';
   }
 
