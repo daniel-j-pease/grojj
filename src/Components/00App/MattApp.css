@@ -5,7 +5,7 @@ html,
 body,
 .GMap {
   height: 100%;
-  position: absolute;
+  position: relative;
   width: 100%;
 }
 .GMap-canvas {
@@ -13,6 +13,13 @@ body,
   display: block;
   width: 100%;
   height: 100%;
+  z-index: -1;
+}
+
+.mapContainer {
+  margin-left: 325px;
+  margin-top: 38px;
+
 }
 
 .UpdatedText {
@@ -74,12 +81,14 @@ nav {
   font-size: 1.5em;
   width: 100%;
   display: block;
+  font-family: 'Raleway', cursive;
 }
 
 nav > div {
   color: #fafafa;
   margin: 0 5vw;
   position: relative;
+  font-family: 'Raleway', cursive;
   left: 12vw;
   text-align: center;
   display: inline-block;
@@ -88,7 +97,6 @@ nav > div {
 
 .nButton:before{
   content: '';
-  position: absolute;
   width: 100%;
   height: 2px;
   bottom: 0;
@@ -107,6 +115,37 @@ nav > div {
   display: none;
 }
 
+<<<<<<< HEAD
+footer {
+    background-color: #394149;
+    color: #fafafa;
+    text-shadow: 2px 2px 2px #222;
+    letter-spacing: 1px;
+    font-family: 'Pacifico', cursive;
+    height: 6vh;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+footer > p {
+    text-align: right;
+    position: relative;
+    top: -5.2vh;
+    padding-right: 50px;
+}
+
+.center-a {
+    text-align: left;
+    position: relative;
+    font-family: 'Raleway', cursive;
+    margin-left: 4vw;
+    top: 8px;
+    text-decoration: none;
+    color: #fafafa;
+}
+=======
 #loginButton {
   position: absolute;
   font-size: 1em;
@@ -118,3 +157,4 @@ nav > div {
   width: 15vw;
   display: block;
 }
+>>>>>>> 068123877a8145b56c6924b682c5079b3ea822df

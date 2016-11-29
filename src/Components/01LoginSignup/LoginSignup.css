@@ -1,4 +1,3 @@
-
 #loginSignup {
   position: relative;
   top: 20vh;
@@ -11,7 +10,7 @@
 
 #login {
   width: 29.45vw;
-  height: 70vh;
+
 }
 
 #signup {
@@ -34,11 +33,11 @@
   width: .5vw;
 }
 
-#loginSignupCancel{
+/*#loginSignupCancel{
   position: absolute;
   margin-top: 40vh;
   margin-left: 9vw;
-}
+}*/
 
 /*#welcome {
   position: absolute;

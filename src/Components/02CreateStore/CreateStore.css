@@ -1,22 +1,37 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
 #createStoreDiv{
   position: relative;
   left: 20vw;
-  height: 100vh;
+  height: 90vh;
   width: 60vw;
   background-color: #0A1612;
   display: none;
+  border-radius: 3px;
+  font-family: 'Raleway', sans-serif;
 }
 
 #createStoreHeading{
+  margin-top: 10%;
+  padding: 4%;
   text-align: center;
-  color: #C5C1C0;
-  padding-top: 30px;
+  color: #0A1612;
+  background-color: #FAFAFA;
+  border-radius: 3px;
+}
+
+#addItemHeading:hover{
+  color: #F7CE3E;
 }
 
 #createStoreDiv > input{
   display: block;
   line-height: 40px;
   border: none;
+}
+
+#filled{
+  margin-top: 10%;
 }
 
 .uname,
@@ -126,3 +141,9 @@
 #cancelStoreButton:hover{
   box-shadow: 2px 2px 2px #222;
 }
+
+input {
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+}
+

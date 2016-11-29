@@ -570,7 +570,13 @@ class App extends Component {
           </nav>
         </header>
         <main>
+<<<<<<< HEAD
+
+          <div className="mapContainer" style={{width:750, height:450, background: 'pink'}}>
+
+=======
           <div style={{width:400, height:400, background: 'red'}}>
+>>>>>>> 068123877a8145b56c6924b682c5079b3ea822df
             <SaveMap
               center={location}
               markers={markers}
@@ -606,10 +612,18 @@ class App extends Component {
               trackCreateItem={this.trackCreateItem.bind(this)}
             />
         </main>
+<<<<<<< HEAD
+
+         <footer>
+            <a href="#" className='center-a'>About Us</a>
+            <a href="#" className='center-a'>Contact</a>
+            <p>Grojj 2016</p>
+=======
         <footer>
           <a href="#" className='center-a'>About Us</a>
           <a href="#" className='center-a'>Contact</a>
           <p>Grojj 2016</p>
+>>>>>>> 068123877a8145b56c6924b682c5079b3ea822df
         </footer>
       </div>
     )
