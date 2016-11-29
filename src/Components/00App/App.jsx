@@ -126,6 +126,11 @@ class App extends Component {
     loginSignup.style.display = 'none';
   }
 
+  hideMap() {
+    let map = document.querySelector('.mapContainer')
+    map.style.display = 'none';
+  }
+
   showSearchInput() {
     let searchInput = document.querySelector('#searchInput');
     searchInput.style.display = 'block';
@@ -282,6 +287,7 @@ class App extends Component {
       this.hideLoginButton();
       this.showLogoutButton();
       this.showAsideSMyStore();
+      this.hideMap();
       console.log(this.state)
     })
     .catch(error => this.loginError(error))
@@ -316,23 +322,26 @@ class App extends Component {
   }
 
   trackCreateStore(e) {
-    let fieldsArr = e.target.parentElement.parentElement.childNodes;
+    let fieldsArr = e.target.parentElement.parentElement.childNodes[1].childNodes;
     this.setState({
       createStorefront: {
-        name: fieldsArr[1].value,
-        address: fieldsArr[2].value,
-        borough: fieldsArr[3].children[0].value,
-        zip: fieldsArr[3].children[1].value,
-        directions: fieldsArr[4].value,
-        sale_date: fieldsArr[5].value,
-        startTime: fieldsArr[6].children[0].value,
-        endTime: fieldsArr[6].children[1].value,
+        name: fieldsArr[0].value,
+        address: fieldsArr[1].value,
+        borough: fieldsArr[2].children[0].value,
+        zip: fieldsArr[2].children[1].value,
+        directions: fieldsArr[3].value,
+        sale_date: fieldsArr[4].value,
+        startTime: fieldsArr[5].childNodes[1].value,
+        endTime: fieldsArr[5].childNodes[2].value,
       },
+    }, () => {
+      console.log(this.state)
     })
   }
 
   trackCreateItem(e) {
     let fieldsArr = e.target.parentElement.childNodes;
+    console.log(fieldsArr)
     this.setState({
       createItem: {
         name: fieldsArr[1].value,
@@ -392,6 +401,7 @@ class App extends Component {
   }
 
   postNewStorefront() {
+    console.log('posting new storefront')
     let userItemList = document.querySelector('.rightDiv')
     userItemList.style.display = 'flex';
     let createStorefront = document.querySelector('#createStoreDiv');
@@ -430,6 +440,9 @@ class App extends Component {
           endTime: this.state.createStorefront.endTime,
         }
       })
+    })
+    .then(()=> {
+      console.log('post add new storefrtont', this.state)
     })
   };
 
@@ -539,7 +552,9 @@ class App extends Component {
       }
     ]
     return (
+
       <div>
+
         <header>
           <h1>Grojj.</h1>
           <button id="loginButton" onClick={this.showLoginSignup}>Login or Sign Up</button>
@@ -569,19 +584,19 @@ class App extends Component {
               />
           </nav>
         </header>
+
         <main>
-<<<<<<< HEAD
+
 
           <div className="mapContainer" style={{width:750, height:450, background: 'pink'}}>
 
-=======
-          <div style={{width:400, height:400, background: 'red'}}>
->>>>>>> 068123877a8145b56c6924b682c5079b3ea822df
             <SaveMap
               center={location}
               markers={markers}
             />
           </div>
+
+
             <CreateStore
               postNewStorefront={this.postNewStorefront.bind(this)}
               trackCreateStore={this.trackCreateStore.bind(this)}
@@ -611,21 +626,22 @@ class App extends Component {
               postNewItem={this.postNewItem.bind(this)}
               trackCreateItem={this.trackCreateItem.bind(this)}
             />
-        </main>
-<<<<<<< HEAD
 
-         <footer>
-            <a href="#" className='center-a'>About Us</a>
-            <a href="#" className='center-a'>Contact</a>
-            <p>Grojj 2016</p>
-=======
-        <footer>
+
+
+      </main>
+
+
+       <footer>
+
           <a href="#" className='center-a'>About Us</a>
           <a href="#" className='center-a'>Contact</a>
           <p>Grojj 2016</p>
->>>>>>> 068123877a8145b56c6924b682c5079b3ea822df
+
         </footer>
+
       </div>
+
     )
   }
 }

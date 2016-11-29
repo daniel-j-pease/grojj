@@ -11,6 +11,7 @@ body,
 .GMap-canvas {
   top: 20px;
   display: block;
+  float: right;
   width: 100%;
   height: 100%;
   z-index: -1;
@@ -19,7 +20,6 @@ body,
 .mapContainer {
   margin-left: 325px;
   margin-top: 38px;
-
 }
 
 .UpdatedText {
@@ -82,7 +82,10 @@ nav {
   width: 100%;
   display: block;
   font-family: 'Raleway', cursive;
+  text-decoration: line;
 }
+
+
 
 nav > div {
   color: #fafafa;
@@ -115,7 +118,7 @@ nav > div {
   display: none;
 }
 
-<<<<<<< HEAD
+
 footer {
     background-color: #394149;
     color: #fafafa;
@@ -136,6 +139,10 @@ footer > p {
     padding-right: 50px;
 }
 
+h1:hover {
+  color: yellow;
+}
+
 .center-a {
     text-align: left;
     position: relative;
@@ -145,16 +152,21 @@ footer > p {
     text-decoration: none;
     color: #fafafa;
 }
-=======
+
 #loginButton {
   position: absolute;
   font-size: 1em;
   border: 1px solid #fafafa;
-  background-color: #fafafa;
-  color: #0A1612;
-  top: 8vh;
-  right: 1vw;
+  background-color: #394149;
+  color: #fafafa;
+  top: 4vh;
+  right: 2vw;
   width: 15vw;
   display: block;
 }
->>>>>>> 068123877a8145b56c6924b682c5079b3ea822df
+
+#loginButton:hover {
+  color: #394149;
+  background-color: #FAFAFA;
+  transition: background-color 0.25s;
+}
