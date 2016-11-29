@@ -27,7 +27,7 @@ export default class StorefrontDD extends Component {
       )
     } else {
       return(
-        <div onClick={this.props.showLogin}>Create My Storefront</div>
+        <div onClick={this.props.showLoginButton}>Create My Garage Sale</div>
       )
     }
   }

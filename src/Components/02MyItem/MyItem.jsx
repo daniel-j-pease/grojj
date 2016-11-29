@@ -38,7 +38,7 @@ export default class MyItem extends Component {
         <p className="myStoreMyItems" className="myItemLikes">
           {this.props.likes}
         </p>
-        <button>Edit</button>
+        <button onClick={this.props.putEditItem} id="editItemButton">Edit Item</button>
         <button>Delete</button>
       </div>
     );

@@ -29,7 +29,7 @@ export default class MyItemList extends Component{
       <div className="rightDiv">
         <h3>Click button to sell items!</h3>
         <button id="addItemButton" onClick={this.revealUploadForm}>Add item!</button>
-        <div>
+        <div id="itemListDiv">
           {this.renderItems()}
         </div>
       </div>

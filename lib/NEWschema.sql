@@ -44,9 +44,7 @@ CREATE TABLE grojjAddresses(
   state TEXT NOT NULL DEFAULT 'NY',
   zip VARCHAR NOT NULL,
   latitude VARCHAR NOT NULL,
-  longitude VARCHAR NOT NULL,
-  sellerUname VARCHAR NOT NULL,
-  sellerid TEXT NOT NULL
+  longitude VARCHAR NOT NULL
 );
 
 COMMIT;
