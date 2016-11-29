@@ -14,18 +14,21 @@ const { getAllStorefronts,
 apiRouter.route('/items')
   .get(getAllItems, (req, res) => res.json(res.items))
   .post(getStorefrontItems, (req, res) => res.json(res.storefrontItems))
-  .put(editOneItem, (req,res) => res.json({message: 'item successfully edited'}))
+  .put(editOneItem, (req,res) => res.json({message: 'item successfully edited'}));
 
 apiRouter.route('/item')
   .post(addNewItem, (req, res) => res.json({message: 'item successfully added'}));
 
 apiRouter.route('/storefronts')
   .get(getAllStorefronts, (req, res) => res.json(res.storefronts))
-  .post(removeOneStorefront, (req, res) => res.json({message: 'storefront successfully removed'}))
   .put(editOneStorefront, (req, res) => res.json({message: 'storefront successfully edited'}));
 
+apiRouter.route('/storefronts/:id')
+  .delete(removeOneStorefront, (req, res) => res.json({message: 'storefront successfully removed'}));
+
 apiRouter.route('/storefront')
-  .post(addNewStorefront, (req, res) => res.json({message: 'storefront successfully added'}))
+  .post(addNewStorefront, (req, res) => res.json({message: 'storefront successfully added'}));
+
 
 apiRouter.route('/myStorefront')
   .post(getOneStorefront, (req, res) => res.json(res.storefront));

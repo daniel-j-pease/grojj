@@ -200,9 +200,10 @@ class App extends Component {
     })
   }
 
-  removeOneStorefront() {
-    return fetch('/api/storefronts', {
-      method: 'POST',
+  removeOneStorefront(id) {
+    console.log('removing', id)
+    return fetch(`/api/storefronts/${id}`, {
+      method: 'DELETE',
       headers: {
         'Content-Type': 'application/JSON',
         'Authorization': 'Bearer ' + this.state.currentToken

@@ -16,10 +16,6 @@ function comparePassword (req, res, next) {
     })
 };
 
-function logOut (req, res, next) {
-  res.send('logging out');
-}
-
 module.exports = {
   comparePassword,
 }
