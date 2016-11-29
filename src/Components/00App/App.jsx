@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-<<<<<<< HEAD
-import saveMap from './Maps.jsx';
-=======
-import SaveMap from './Maps.jsx';
-
->>>>>>> 4c0a18d0f0017bbcd357d1ef25a2874c060cc85b
 import LoginSignup from '../01LoginSignup/LoginSignup.jsx';
 import Logout from '../01Logout/Logout.jsx';
 import CreateStore from '../02CreateStore/CreateStore.jsx';
@@ -23,10 +17,6 @@ class App extends Component {
     super();
 
     this.state = {
-      // markers: {
-      //   lat: 40.7575285,
-      //   lng: -73.9884469
-      // },
       searchZip: '',
       loggedIn: false,
       currentUser: '',
@@ -80,7 +70,6 @@ class App extends Component {
       storefrontItems: []
     };
   }
-
 
   showLoginSignup() {
     let loginSignup = document.querySelector('#loginSignup');
@@ -278,7 +267,6 @@ class App extends Component {
     })
     .catch(error => this.loginError(error))
   }
-
 
   logout() {
     this.setState({
@@ -481,37 +469,8 @@ class App extends Component {
   }
 
   render(){
-<<<<<<< HEAD
-=======
-
->>>>>>> 4c0a18d0f0017bbcd357d1ef25a2874c060cc85b
-    const location = {
-      lat: 40.7575285,
-      lng: -73.9884469
-    }
-    const markers = [
-      {
-        location:{
-          lat: 40.7575285,
-          lng: -73.9884469
-        }
-      }
-    ]
-<<<<<<< HEAD
     return (
       <div>
-        <div style={{width:300, height:600, background: 'pink'}}>
-          <saveMap
-            logout={this.logout.bind(this)}
-          />
-        </div>
-=======
-
-    return (
-      <div>
-
-
->>>>>>> 4c0a18d0f0017bbcd357d1ef25a2874c060cc85b
         <header>
           <h1>Grojj.</h1>
           <button id="loginButton" onClick={this.showLoginSignup}>Login or Sign Up</button>
@@ -542,19 +501,6 @@ class App extends Component {
           </nav>
         </header>
         <main>
-<<<<<<< HEAD
-=======
-
-          <div style={{width:400, height:400, background: 'red'}}>
-
-            <SaveMap
-              center={location}
-              markers={markers}
-            />
-
-          </div>
-
->>>>>>> 4c0a18d0f0017bbcd357d1ef25a2874c060cc85b
           <CreateStore
             postNewStorefront={this.postNewStorefront.bind(this)}
             trackCreateStore={this.trackCreateStore.bind(this)}
@@ -579,15 +525,14 @@ class App extends Component {
             trackCreateItem={this.trackCreateItem.bind(this)}
           />
         </main>
-
         <footer>
-          <div></div>
+          <a href="#" className='center-a'>About Us</a>
+          <a href="#" className='center-a'>Contact</a>
+          <p>Grojj 2016</p>
         </footer>
       </div>
     )
   }
 }
-
-
 
 export default App;

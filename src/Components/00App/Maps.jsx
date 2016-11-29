@@ -20,20 +20,18 @@ class SaveMap extends Component {
     })
 
     return (
-
-  <GoogleMapLoader
-    containerElement = { mapContainer }
-    googleMapElement = {
-        <GoogleMap
-          defaultZoom={15}
-          defaultCenter={this.props.center}
-          options={{streetViewControl: false, mapTypeControl: false}}>
-
-          { markers }
-        </GoogleMap>
-      } />
-
-      )
+      <GoogleMapLoader
+        containerElement = { mapContainer }
+        googleMapElement = {
+          <GoogleMap
+            defaultZoom={15}
+            defaultCenter={this.props.center}
+            options={{streetViewControl: false, mapTypeControl: false}}>
+            { markers }
+          </GoogleMap>
+        }
+      />
+    )
   }
 }
 <<<<<<< HEAD
