@@ -1,4 +1,4 @@
-.rightDiv{
+.rightDiv {
   float: left;
   width: 50%;
   height: 90%;
@@ -17,11 +17,11 @@
 
 .saleItem{
   position: relative;
-  align-self: flex-start;
-  height: 40%;
-  width: 28%;
+  height: 420px;
+  width: 390px;
   margin: 2vh;
   background: #7eee8e;
+  border-radius: 3px;
 }
 
 .myStoreMyItems{
@@ -30,7 +30,10 @@
 }
 
 .itemTitle, .myItemTitle{
-        font-size: 36px;
+  font-size: 30px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  text-align: center;
 }
 
 .itemImage, .myItemImage{

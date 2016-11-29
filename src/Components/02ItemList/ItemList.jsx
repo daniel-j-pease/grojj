@@ -23,6 +23,7 @@ class ItemList extends Component{
 render(){
   return(
     <div className="rightDiv">
+    THIS IS ITEM LIST
       {this.renderItems()}
     </div>
   )

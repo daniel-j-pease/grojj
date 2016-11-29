@@ -6,9 +6,10 @@ import CreateStore from '../02CreateStore/CreateStore.jsx';
 import StorefrontDD from '../01StorefrontDD/StorefrontDD.jsx';
 import SearchDD from '../01SearchDD/SearchDD.jsx';
 import AsideSMyStore from '../02AsideSmyStore/AsideSMyStore.jsx';
-import MyItemList from '../02MyItemList/MyItemList.jsx';
-import AddNewItem from '../02AddNewItem/AddNewItem.jsx';
 import EditStore from '../02EditStore/EditStore.jsx';
+import MyItemList from '../02MyItemList/MyItemList.jsx';
+import EditItem from '../02EditItem/EditItem.jsx'
+import AddNewItem from '../02AddNewItem/AddNewItem.jsx';
 import './MattApp.css';
 
 class App extends Component {
@@ -67,6 +68,13 @@ class App extends Component {
         price: '',
         description: '',
       },
+      editItem: {
+        name: '',
+        image_url: '',
+        condition: '',
+        price: '',
+        description: '',
+      },
       storefrontItems: []
     };
   }
@@ -89,7 +97,6 @@ class App extends Component {
   showLogoutButton() {
     let logoutButton = document.querySelector('#logoutButton');
     logoutButton.style.display = 'block';
-
   }
 
   showAsideSMyStore() {
@@ -100,6 +107,16 @@ class App extends Component {
   hideEditForm() {
     let editStoreDiv = document.querySelector('#editStoreDiv');
     editStoreDiv.style.display = 'none';
+  }
+
+  hideEditItem() {
+    let editItemDiv = document.querySelector('#editItemDiv');
+    editItemDiv.style.display = 'none';
+  }
+
+  hideAddItemDiv() {
+    let addItemDiv = document.querySelector('#addItemDiv');
+    addItemDiv.style.display = 'none';
   }
 
   hideLoginSignup() {
@@ -269,6 +286,8 @@ class App extends Component {
   }
 
   logout() {
+    this.showLoginButton()
+    .then(() => {
     this.setState({
       loggedIn: false,
       currentToken: '',
@@ -285,10 +304,8 @@ class App extends Component {
       },
       storefrontItems: []
     })
-    .then(() => {
-      showLogin();
     })
-  };
+  }
 
   trackSearchInput(e) {
     this.setState({
@@ -337,9 +354,23 @@ class App extends Component {
         sale_date: fieldsArr[5].value,
         startTime: fieldsArr[6].children[0].value,
         endTime: fieldsArr[6].children[1].value,
-      },
+      }
     })
   }
+
+  trackEditItem(e) {
+    let fieldsArr = e.target.parentElement.childNodes;
+    console.log(fieldsArr)
+    this.setState({
+      editItem: {
+        name: fieldsArr[1].value,
+        image_url: fieldsArr[2].value,
+        condition: fieldsArr[3].children[0].value,
+        price: fieldsArr[3].children[1].value,
+        description: fieldsArr[4].value
+      }
+    })
+}
 
   postSearchZip() {
     console.log('search posted')
@@ -419,9 +450,31 @@ class App extends Component {
       }),
     })
     .then(() => {
-      this.getStorefrontItems();
+      this.getStorefrontItems()
+    })
+    .then(() => {
+      this.hideAddItemDiv();
     })
   };
+
+  putEditItem(){
+    return fetch('/api/items', {
+      headers: {
+        'Content-Type:' : 'application/JSON'
+      },
+      method: 'PUT',
+      body: JSON.stringify({
+        name: this.state.editItem.name,
+        image_url: this.state.editItem.image_url,
+        condition: this.state.editItem.condition,
+        price: this.state.editItem.price,
+        description: this.state.editItem.description,
+        likes: 0,
+        currentUser: this.state.currentUser,
+        currentStorefront: this.state.currentStorefront.name
+      })
+    })
+  }
 
   putEditStorefront() {
     return fetch('/api/storefronts', {
@@ -524,7 +577,8 @@ class App extends Component {
             postNewItem={this.postNewItem.bind(this)}
             trackCreateItem={this.trackCreateItem.bind(this)}
           />
-        </main>
+          <div className="mapContainer" style={{width:750, height:450, background: 'pink'}}>
+          <div style={{width:400, height:400, background: 'red'}}>
         <footer>
           <a href="#" className='center-a'>About Us</a>
           <a href="#" className='center-a'>Contact</a>

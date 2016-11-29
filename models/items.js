@@ -26,8 +26,18 @@ function getStorefrontItems(req, res, next) {
     .catch(error => console.log(error))
 }
 
+function editItem(req, res, next) {
+  console.log(req.body)
+  db.none('UPDATE grojjItems SET name = $/name/, image_url = $/image_url/, condition = $/condition/, price = $/price/, description = $/description/, likes = $/likes/, currentUser = $/currentUser/, currentStorefront = $/currentStorefront/;', req.body)
+    .then(() => {
+    next();
+  })
+  .catch(error => console.log(error))
+}
+
 module.exports = {
   getAllItems,
   addNewItem,
   getStorefrontItems,
+  editItem
 };

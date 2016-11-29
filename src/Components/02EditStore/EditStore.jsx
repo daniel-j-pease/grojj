@@ -23,8 +23,8 @@ class EditStore extends Component {
           <input onChange={this.props.trackEditStore} id="directions" type="text" value={this.props.currentStorefront.directions}></input>
           <input onChange={this.props.trackEditStore} id="date" type="date" min="2016-11-25"></input>
         <div id="startEnd">
-          <input onChange={this.props.trackEditStore} id="startTime" type="time" value={this.props.currentStorefront.startTime}></input>
-          <input onChange={this.props.trackEditStore} id="endTime" type="time" value={this.props.currentStorefront.endTime}></input>
+          <input onChange={this.props.trackEditStore} id="startTime" type="time"></input>
+          <input onChange={this.props.trackEditStore} id="endTime" type="time"></input>
         </div>
         <div className="editOrCancel">
           <button onClick={this.props.putEditStorefront} id="editStoreButton">Edit Garage Sale</button>

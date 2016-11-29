@@ -1,39 +1,24 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway);
-
-#createStoreDiv{
+#editItemDiv{
   position: relative;
   left: 20vw;
-  height: 90vh;
+  height: 100vh;
   width: 60vw;
   background-color: #0A1612;
   display: none;
-  border-radius: 3px;
-  font-family: 'Raleway', sans-serif;
 }
 
-#createStoreHeading{
-  margin-top: 10%;
-  padding: 4%;
+#editItemHeading{
   text-align: center;
-  color: #0A1612;
-  background-color: #FAFAFA;
-  border-radius: 3px;
+  color: #C5C1C0;
+  padding-top: 30px;
 }
 
-#addItemHeading:hover{
-  color: #F7CE3E;
-}
-
-#createStoreDiv > input{
+#editItemDiv > input{
   display: block;
   line-height: 40px;
   border: none;
 }
-
-#filled{
-  margin-top: 10%;
-}
-
+/*
 .uname,
 .name,
 .address{
@@ -49,7 +34,7 @@
 #directions,
 #date,
 #startEnd,
-#createStoreButton,
+#editStoreButton,
 #cancelStoreButton{
   margin: 2vh 0;
   padding: .5vh;
@@ -77,8 +62,8 @@
 
 #date{
   position: relative;
-  left: 15vw;
   width: 30vw;
+  left: 15vw;
 }
 
 #directions{
@@ -104,21 +89,21 @@
   border-radius: .8vh;
 }
 
-.createOrCancel{
+.editOrCancel{
   height: 40px;
   width: 30vw;
   position: relative;
   left: 15vw;
 }
 
-.createOrCancel > button{
+.editOrCancel > button{
   height: 40px;
   width: 15vw;
   font-size: 1em;
   border: 3px solid #0A1612;
 }
 
-#createStoreButton{
+#editStoreButton{
   position: relative;
   color: #C5C1C0;
   border: 3px solid #1A2930;
@@ -134,16 +119,11 @@
   background-color: #F7CE3E;
 }
 
-#createStoreButton:hover{
+#editStoreButton:hover{
   box-shadow: 2px 2px 2px #222;
 }
 
 #cancelStoreButton:hover{
   box-shadow: 2px 2px 2px #222;
 }
-
-input {
-  font-family: 'Raleway', sans-serif;
-  font-size: 15px;
-}
-
+*/

@@ -7,10 +7,15 @@
 
 #loginSignup {
   position: relative;
+  z-index: +1;
   top: 3vh;
   left: 20vw;
-  height: 70vh;
+  top: 6vh;
+  height: 50vh;
   width: 60vw;
+  border: 1px solid black;
+  width: 60vw;
+  box-shadow: 7px 7px 5px #888888;
   background: -moz-linear-gradient(#fff, #999);
   background: -webkit-linear-gradient(#fff, #999);
   background: -o-linear-gradient(#fff, #999);
@@ -19,6 +24,7 @@
 
 .close-btn {
   height: 3vh;
+  width: 3vh;
   position: relative;
   top: 0vh;
   left: 44vh;
@@ -38,7 +44,7 @@
 
 #login {
   width: 29.45vw;
-  height: 70vh;
+
 }
 
 #signup {
@@ -47,7 +53,7 @@
   top: 4.2vh;
   left: 50%;
   width: 29.45vw;
-  height: 65vh;
+  height: 45vh;
 }
 
 .loginModal > h1 {
