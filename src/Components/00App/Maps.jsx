@@ -35,9 +35,5 @@ class SaveMap extends Component {
     )
   }
 }
-<<<<<<< HEAD
-export default saveMap;
-=======
 
 export default SaveMap;
->>>>>>> 4c0a18d0f0017bbcd357d1ef25a2874c060cc85b
