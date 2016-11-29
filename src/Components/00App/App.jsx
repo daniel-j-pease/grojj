@@ -124,6 +124,11 @@ class App extends Component {
     loginSignup.style.display = 'none';
   }
 
+  hideMap() {
+    let map = document.querySelector('.mapContainer')
+    map.style.display = 'none';
+  }
+
   showSearchInput() {
     let searchInput = document.querySelector('#searchInput');
     searchInput.style.display = 'block';
@@ -280,6 +285,7 @@ class App extends Component {
       this.hideLoginButton();
       this.showLogoutButton();
       this.showAsideSMyStore();
+      this.hideMap();
       console.log(this.state)
     })
     .catch(error => this.loginError(error))
@@ -314,23 +320,26 @@ class App extends Component {
   }
 
   trackCreateStore(e) {
-    let fieldsArr = e.target.parentElement.parentElement.childNodes;
+    let fieldsArr = e.target.parentElement.parentElement.childNodes[1].childNodes;
     this.setState({
       createStorefront: {
-        name: fieldsArr[1].value,
-        address: fieldsArr[2].value,
-        borough: fieldsArr[3].children[0].value,
-        zip: fieldsArr[3].children[1].value,
-        directions: fieldsArr[4].value,
-        sale_date: fieldsArr[5].value,
-        startTime: fieldsArr[6].children[0].value,
-        endTime: fieldsArr[6].children[1].value,
+        name: fieldsArr[0].value,
+        address: fieldsArr[1].value,
+        borough: fieldsArr[2].children[0].value,
+        zip: fieldsArr[2].children[1].value,
+        directions: fieldsArr[3].value,
+        sale_date: fieldsArr[4].value,
+        startTime: fieldsArr[5].childNodes[1].value,
+        endTime: fieldsArr[5].childNodes[2].value,
       },
+    }, () => {
+      console.log(this.state)
     })
   }
 
   trackCreateItem(e) {
     let fieldsArr = e.target.parentElement.childNodes;
+    console.log(fieldsArr)
     this.setState({
       createItem: {
         name: fieldsArr[1].value,
@@ -390,6 +399,7 @@ class App extends Component {
   }
 
   postNewStorefront() {
+    console.log('posting new storefront')
     let userItemList = document.querySelector('.rightDiv')
     userItemList.style.display = 'flex';
     let createStorefront = document.querySelector('#createStoreDiv');
@@ -428,6 +438,9 @@ class App extends Component {
           endTime: this.state.createStorefront.endTime,
         }
       })
+    })
+    .then(()=> {
+      console.log('post add new storefrtont', this.state)
     })
   };
 
@@ -523,7 +536,9 @@ class App extends Component {
 
   render(){
     return (
+
       <div>
+
         <header>
           <h1>Grojj.</h1>
           <button id="loginButton" onClick={this.showLoginSignup}>Login or Sign Up</button>
@@ -553,7 +568,9 @@ class App extends Component {
               />
           </nav>
         </header>
+
         <main>
+<<<<<<< HEAD
           <CreateStore
             postNewStorefront={this.postNewStorefront.bind(this)}
             trackCreateStore={this.trackCreateStore.bind(this)}
@@ -585,6 +602,64 @@ class App extends Component {
           <a href="#" className='center-a'>Contact</a>
           <p>Grojj 2016</p>
         </footer>
+=======
+
+
+          <div className="mapContainer" style={{width:750, height:450, background: 'pink'}}>
+
+            <SaveMap
+              center={location}
+              markers={markers}
+            />
+          </div>
+
+
+            <CreateStore
+              postNewStorefront={this.postNewStorefront.bind(this)}
+              trackCreateStore={this.trackCreateStore.bind(this)}
+            />
+            <EditStore
+              currentStorefront={this.state.currentStorefront}
+              putEditStorefront={this.putEditStorefront.bind(this)}
+              trackEditStore={this.trackEditStore.bind(this)}
+              hideEditForm={this.hideEditForm.bind(this)}
+            />
+            <AsideSMyStore
+              currentStorefront={this.state.currentStorefront}
+              currentUser={this.state.currentUser}
+              editStorefront={this.state.editStorefront}
+              removeOneStorefront={this.removeOneStorefront.bind(this)}
+            />
+            <MyItemList
+              storefrontItems={this.state.storefrontItems}
+            />
+            <EditItem
+              currentStorefront={this.state.currentStorefront}
+              putEditItem={this.putEditItem.bind(this)}
+              trackEditItem={this.trackEditItem.bind(this)}
+              hideEditItem={this.hideEditItem.bind(this)}
+            />
+            <AddNewItem
+              postNewItem={this.postNewItem.bind(this)}
+              trackCreateItem={this.trackCreateItem.bind(this)}
+            />
+
+
+
+      </main>
+
+
+       <footer>
+
+          <a href="#" className='center-a'>About Us</a>
+          <a href="#" className='center-a'>Contact</a>
+          <p>Grojj 2016</p>
+
+        </footer>
+
+      </div>
+
+>>>>>>> 4235f50f11d0a6937fd682e46d945a718c17dce0
     )
   }
 }

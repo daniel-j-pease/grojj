@@ -1,11 +1,11 @@
 #loginSignup {
   position: relative;
   top: 20vh;
-  left: 20vw;
-  height: 70vh;
-  width: 60vw;
-  background-color: #0A1612;
-  display: none;
+  /*left: 20vw;
+  height: 70vh;*/
+  width: .5vw;
+/*  background-color: #0A1612;
+  display: none;*/
 }
 
 #login {
