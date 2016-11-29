@@ -11,13 +11,8 @@ class CreateStore extends Component {
   render(){
     return(
       <div id="createStoreDiv">
-
         <h3 id="createStoreHeading">Let's set up a garage sale! </h3>
-
         <div id="filled">
-
-        <h4 id="createStoreHeading">Let's set up a garage sale! </h4>
-
           <input onChange={this.props.trackCreateStore} className="name" type="text" placeholder="Name of garage sale" required></input>
           <input onChange={this.props.trackCreateStore} className="address" type="text" placeholder="Street address" required></input>
         <div className="smallLocations">
@@ -34,6 +29,7 @@ class CreateStore extends Component {
           <input onChange={this.props.trackCreateStore} id="directions" type="text" placeholder="Directions (optional)"></input>
           <input onChange={this.props.trackCreateStore} id="date" type="date" min="2016-11-25"></input>
         <div id="startEnd">
+          <br></br>
           <input onChange={this.props.trackCreateStore} id="startTime" type="time"></input>
           <input onChange={this.props.trackCreateStore} id="endTime" type="time"></input>
         </div>
