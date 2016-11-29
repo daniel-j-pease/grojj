@@ -577,14 +577,14 @@ class App extends Component {
             postNewItem={this.postNewItem.bind(this)}
             trackCreateItem={this.trackCreateItem.bind(this)}
           />
-          <div className="mapContainer" style={{width:750, height:450, background: 'pink'}}>
-          <div style={{width:400, height:400, background: 'red'}}>
+          <div className="mapContainer" style={{width:750, height:450, background: 'pink'}}></div>
+          <div style={{width:400, height:400, background: 'red'}}></div>
+        </main>
         <footer>
           <a href="#" className='center-a'>About Us</a>
           <a href="#" className='center-a'>Contact</a>
           <p>Grojj 2016</p>
         </footer>
-      </div>
     )
   }
 }
