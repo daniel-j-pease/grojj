@@ -22,7 +22,7 @@ class AsideSMyStore extends Component {
           <div>start time: {this.props.currentStorefront.startTime}</div>
           <div>end time: {this.props.currentStorefront.endTime}</div>
           <button onClick={this.editStorefront} id="editButton">edit</button>
-          <button onClick={this.props.removeOneStorefront(this.props.currentStorefront.id)} id="deleteButton">delete</button>
+          <button onClick={this.props.removeOneStorefront} id="deleteButton">delete</button>
         </aside>
       </div>
     );

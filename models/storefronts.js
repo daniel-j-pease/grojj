@@ -36,8 +36,8 @@ function addNewStorefront(req, res, next) {
 };
 
 function removeOneStorefront(req, res, next) {
-  console.log(req.params)
-  db.none('DELETE FROM grojjStorefronts WHERE grojjStorefronts.currentUser = $/currentUser/;', req.params)
+  console.log(req.body)
+  db.none('DELETE FROM grojjStorefronts WHERE grojjStorefronts.currentUser = $/currentUser/;', req.body)
     .then( () => {
       next();
     })
